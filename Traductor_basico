@@ -1,0 +1,35 @@
+#Traductor Basico
+
+#Valida la entrada de usuario
+while True:
+
+    print("""
+          
+          Bienvenido al traductor
+          
+          """)
+    
+    #entrada de usuario en cadena de texto en ingles
+    usuario=str(input("Ingresa una frase en ingles: "))
+
+    #importamos el servicio de traduccion de google
+    from googletrans import Translator
+
+    #variable en la cual se va a almacenar la entrada 
+    Traduccion=Translator()
+
+    #variable que realiza la traduccion a español
+    Traduccion_texto=Traduccion.translate(usuario,dest="es").text
+
+    #imprime la traduccion
+    print(Traduccion_texto)
+
+    #entrada de usuario donde terminara o no el bucle
+    usuario=str(input("¿Desea seguir con el traductor? "))
+
+    #comprueba la entrada anterior 
+    if usuario=="No":
+
+        print("hasta la proxima traduccion")
+
+        break
